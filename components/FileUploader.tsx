@@ -10,16 +10,10 @@ import { MAX_FILE_SIZE } from "@/constants";
 import { useToast } from "@/hooks/use-toast";
 import { uploadFile } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
-
-// Props definition for the FileUploader component
-interface Props {
-  ownerId: string; // ID of the user or owner of the file
-  accountId: string; // Account ID used to associate the upload
-  className?: string; // Optional class name for styling override
-}
+import { FileUploaderProps } from "@/types";
 
 // Main file upload component
-const FileUploader = ({ ownerId, accountId, className }: Props) => {
+const FileUploader = ({ ownerId, accountId, className }: FileUploaderProps) => {
   const path = usePathname(); // Get current path for contextual upload
   const { toast } = useToast(); // Custom toast hook for notifications
   const [files, setFiles] = useState<File[]>([]); // State to track uploaded files

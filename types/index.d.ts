@@ -92,3 +92,23 @@ declare interface ShareInputProps {
   onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Callback to handle input field changes
   onRemove: (email: string) => void; // Callback to remove an email from the share list
 }
+
+// Props definition for the FileUploader component
+export interface FileUploaderProps {
+  ownerId: string; // ID of the user or owner of the file
+  accountId: string; // Account ID used to associate the upload
+  className?: string; // Optional class name for styling override
+}
+
+export interface ThumbnailProps {
+  // File type, e.g. "image", "video", "document"
+  type: string;
+  // File extension, e.g. "jpg", "png", "pdf"
+  extension: string;
+  // Optional URL of the image or file thumbnail
+  url?: string;
+  // Optional additional CSS classes for the <Image> element
+  imageClassName?: string;
+  // Optional additional CSS classes for the wrapper <figure> element
+  className?: string;
+}

@@ -1,4 +1,4 @@
-"use server"; // Directive indicating this code runs on the server (Next.js app directory convention)
+"use server"; 
 
 import { createAdminClient, createSessionClient } from "@/lib/appwrite";
 import { InputFile } from "node-appwrite/file";
@@ -7,6 +7,7 @@ import { ID, Models, Query } from "node-appwrite";
 import { constructFileUrl, getFileType, parseStringify } from "@/lib/utils";
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/lib/actions/user.actions";
+import { UploadFileProps, GetFilesProps, RenameFileProps, UpdateFileUsersProps, DeleteFileProps, FileType } from "@/types";
 
 /**
  * Generic error handler for consistent error logging and throwing.

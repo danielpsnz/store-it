@@ -26,7 +26,9 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
   // Fetch the current authenticated user
   const currentUser = await getCurrentUser();
 
-f
+  if (!currentUser) {
+    redirect("/sign-in");
+  }
 
   return (
     <main className="flex h-screen">

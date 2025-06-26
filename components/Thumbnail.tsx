@@ -1,19 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { cn, getFileIcon } from "@/lib/utils";
-
-interface Props {
-  // File type, e.g. "image", "video", "document"
-  type: string;
-  // File extension, e.g. "jpg", "png", "pdf"
-  extension: string;
-  // Optional URL of the image or file thumbnail
-  url?: string;
-  // Optional additional CSS classes for the <Image> element
-  imageClassName?: string;
-  // Optional additional CSS classes for the wrapper <figure> element
-  className?: string;
-}
+import { ThumbnailProps } from "@/types";
 
 /**
  * Thumbnail component displays a file preview.
@@ -29,7 +17,7 @@ export const Thumbnail = ({
   url = "",
   imageClassName,
   className,
-}: Props) => {
+}: ThumbnailProps) => {
   // Determine if the file should be displayed as an image
   const isImage = type === "image" && extension !== "svg";
 
